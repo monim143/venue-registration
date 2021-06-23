@@ -1,0 +1,414 @@
+/**
+ * @Main scss for (venues)
+ * @project     - venues
+ * @author      - venues
+ * @created_by  - kawsar bin siraj
+ * @created_at  - 07-02-2021
+ * @modified_by -
+ */
+/* fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap");
+/* fonts import -END */
+/* reset, root */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  font-family: 'Mulish', sans-serif; }
+
+:root {
+  --theme-main-color: #0FB5CD;
+  --theme-main-color-shade: #D3F9FF;
+  --theme-secondary-color: #F9622D;
+  --theme-black-color: #212529;
+  --theme-gray-color: #414C59;
+  --theme-light-gray-color: #F9F9FA;
+  --theme-dark-purple-color: #313360;
+  --theme-dark-orange-color: #F5BD7B;
+  --theme-dark-orange-shade: #FFF7ED; }
+
+/* reset, root - END */
+/* helper , base classes */
+.is-shadow {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); }
+
+.is-radius {
+  border-radius: 10px; }
+
+.bg-theme-main-color {
+  background-color: var(--theme-main-color) !important; }
+
+.bg-theme-light-gray {
+  background-color: var(--theme-light-gray-color) !important; }
+
+.bg-theme-main-shade {
+  background-color: var(--theme-main-color-shade) !important; }
+
+.bg-theme-dark-purple {
+  background-color: var(--theme-dark-purple-color) !important; }
+
+.bg-theme-dark-orange {
+  background-color: var(--theme-dark-orange-color) !important; }
+
+.bg-theme-dark-orange-shade {
+  background-color: var(--theme-dark-orange-shade) !important; }
+
+.text-theme-main-color {
+  color: var(--theme-main-color) !important; }
+
+/* helper , base classes  - END*/
+/* css for navigation */
+@media (max-width: 992px) {
+  #navigation .navbar-toggler {
+    width: 45px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 4px; }
+    #navigation .navbar-toggler:focus {
+      box-shadow: none; } }
+#navigation .navbar-nav .nav-item .nav-link {
+  --nav-color: #7F7F7F;
+  font-family: 'Hind', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(100% + 7px);
+  color: var(--nav-color);
+  display: inline-flex;
+  transition: all .3s;
+  position: relative;
+  z-index: 10;
+  border-radius: 10px; }
+  @media (min-width: 992px) {
+    #navigation .navbar-nav .nav-item .nav-link::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 0;
+      background: var(--theme-secondary-color);
+      top: 0;
+      left: 0;
+      transition: all .3s;
+      z-index: -10;
+      border-radius: 10px; } }
+  #navigation .navbar-nav .nav-item .nav-link:hover {
+    color: #fff; }
+    @media (max-width: 992px) {
+      #navigation .navbar-nav .nav-item .nav-link:hover {
+        color: var(--theme-secondary-color); } }
+    #navigation .navbar-nav .nav-item .nav-link:hover::after {
+      top: initial;
+      bottom: 0 !important;
+      height: 100%; }
+  #navigation .navbar-nav .nav-item .nav-link.btn-register {
+    padding: 10px 20px;
+    transition: all .3s; }
+    @media (max-width: 992px) {
+      #navigation .navbar-nav .nav-item .nav-link.btn-register:hover {
+        background-color: var(--theme-secondary-color) !important;
+        border-color: var(--theme-secondary-color) !important; } }
+
+/* css for  navigation  - END*/
+/* css for  section-header */
+.section-header .section-title {
+  font-size: 35px;
+  font-weight: 800;
+  line-height: calc(100% + 10px); }
+  @media (max-width: 992px) {
+    .section-header .section-title {
+      font-size: 26px; } }
+.section-header .section-sub-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: calc(100% + 8px); }
+  @media (max-width: 992px) {
+    .section-header .section-sub-title {
+      font-size: 16px; } }
+
+/* css for  section-header  - END*/
+/* css for venue-registration - END*/
+@media (min-width: 1200px) {
+  #venue-registration #steps {
+    display: grid;
+    grid-template-columns: 310px 1fr;
+    grid-gap: 30px; } }
+#venue-registration #steps .step-steps {
+  display: block; }
+  #venue-registration #steps .step-steps li.step-list {
+    --step-icon-size: 64px;
+    --step-vertical-distance: 150px;
+    display: grid;
+    grid-template-columns: var(--step-icon-size) 1fr;
+    grid-column-gap: 15px;
+    align-items: center;
+    padding: 0 !important;
+    background-color: transparent !important;
+    color: #222;
+    position: relative;
+    z-index: 10; }
+    @media (min-width: 1200px) {
+      #venue-registration #steps .step-steps li.step-list:not(:last-child)::before {
+        content: '';
+        display: block;
+        width: 2px;
+        height: calc(var(--step-vertical-distance) + 20px);
+        background-color: #ccc;
+        position: absolute;
+        left: calc(var(--step-icon-size) / 2);
+        top: calc(var(--step-icon-size));
+        z-index: -10; } }
+    #venue-registration #steps .step-steps li.step-list + li.step-list {
+      margin-top: var(--step-vertical-distance); }
+    #venue-registration #steps .step-steps li.step-list .step-icon {
+      width: var(--step-icon-size);
+      height: var(--step-icon-size);
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #ccc;
+      background-color: #EBEBEB; }
+    #venue-registration #steps .step-steps li.step-list.active .step-icon, #venue-registration #steps .step-steps li.step-list.done .step-icon {
+      background-color: var(--theme-main-color);
+      border-color: var(--theme-main-color);
+      color: #fff; }
+      #venue-registration #steps .step-steps li.step-list.active .step-icon > img.imgIcon, #venue-registration #steps .step-steps li.step-list.done .step-icon > img.imgIcon {
+        filter: invert(1) brightness(500%); }
+    #venue-registration #steps .step-steps li.step-list.active::before, #venue-registration #steps .step-steps li.step-list.done::before {
+      background-color: var(--theme-main-color); }
+    #venue-registration #steps .step-steps li.step-list .step-text .title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: calc(100% + 5px);
+      margin-bottom: 8px;
+      color: var(--theme-black-color); }
+    #venue-registration #steps .step-steps li.step-list .step-text .sub-title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: calc(100% + 5px);
+      color: var(--theme-gray-color); }
+#venue-registration #steps .step-footer {
+  display: flex;
+  justify-content: space-between; }
+  #venue-registration #steps .step-footer .step-btn {
+    height: 45px;
+    border: 2px solid var(--theme-main-color);
+    background-color: var(--theme-main-color);
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all .3s; }
+    #venue-registration #steps .step-footer .step-btn > span {
+      position: relative;
+      top: 2px; }
+    #venue-registration #steps .step-footer .step-btn:hover {
+      background-color: transparent;
+      color: var(--theme-main-color); }
+    #venue-registration #steps .step-footer .step-btn.step-prev {
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      color: #000;
+      font-weight: 700; }
+      #venue-registration #steps .step-footer .step-btn.step-prev > span {
+        font-weight: 700; }
+      #venue-registration #steps .step-footer .step-btn.step-prev:hover {
+        color: var(--theme-main-color); }
+
+/* css for venue-registration  - END*/
+/* css for venue-card*/
+.form-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #414C59; }
+
+.form-check-label {
+  font-size: 15px;
+  color: #414C59; }
+
+.form-control,
+.form-select {
+  font-size: 16px;
+  color: #6B6C72;
+  transition: all .3s; }
+  .form-control:focus,
+  .form-select:focus {
+    box-shadow: none;
+    border-color: var(--theme-main-color); }
+
+.venue-header-icon {
+  --icon-size: 55px;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border-radius: 100%;
+  background-color: var(--theme-main-color-shade);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.d-group {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-column-gap: 10px; }
+  .d-group .venue-header-icon {
+    --icon-size: 44px;
+    padding: 10px; }
+
+.btn-add {
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--theme-main-color);
+  color: var(--theme-main-color);
+  font-size: 20px;
+  font-weight: 700; }
+  .btn-add.btn-remove {
+    border-color: #f00;
+    color: #f00; }
+    .btn-add.btn-remove:hover {
+      color: #fff;
+      background-color: #f00; }
+  .btn-add:hover {
+    color: #fff;
+    background-color: var(--theme-main-color); }
+  .btn-add:focus {
+    box-shadow: none; }
+
+.venue-card .venue-card-header .venue-card-header-title {
+  font-size: 25px;
+  font-weight: 800;
+  line-height: calc(100% + 8px);
+  position: relative; }
+  .venue-card .venue-card-header .venue-card-header-title::before {
+    content: '';
+    display: block;
+    width: 75px;
+    height: 3px;
+    left: 0;
+    top: 100%;
+    position: absolute;
+    background-color: var(--theme-main-color); }
+.venue-card .venue-card-body .input-group-text {
+  background-color: var(--theme-main-color);
+  color: #fff;
+  border: 0;
+  font-size: 20px; }
+.venue-card .venue-card-body .file-formate-1 {
+  cursor: pointer;
+  transition: all .3s; }
+  .venue-card .venue-card-body .file-formate-1:hover {
+    border-color: var(--theme-main-color) !important; }
+  .venue-card .venue-card-body .file-formate-1 .placeholder-title {
+    font-weight: 500; }
+  .venue-card .venue-card-body .file-formate-1 .placeholder-sub-title {
+    color: #ABABAB;
+    font-weight: 300; }
+.venue-card .venue-card-body .file-formate-2 {
+  max-width: 275px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 16px; }
+  .venue-card .venue-card-body .file-formate-2 .file-icon {
+    width: 42px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+.venue-card .covid-safe-img {
+  position: relative;
+  top: -50px; }
+  @media (max-width: 1200px) {
+    .venue-card .covid-safe-img {
+      top: -10px; } }
+  @media (max-width: 576px) {
+    .venue-card .covid-safe-img {
+      top: 0px; } }
+
+/* css for venue-card  - END*/
+/* css for membership-plan */
+.plan-title {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: calc(100% + 5px);
+  color: var(--theme-black-color); }
+
+.plan-sub-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: calc(100% + 5px);
+  color: var(--theme-gray-color); }
+
+.plan-table table.table-main tr td,
+.plan-table table.table-main tr th {
+  min-width: 150px !important; }
+  @media (min-width: 1200px) {
+    .plan-table table.table-main tr td:nth-child(1),
+    .plan-table table.table-main tr th:nth-child(1) {
+      min-width: 260px !important; } }
+  @media (max-width: 1200px) {
+    .plan-table table.table-main tr td:nth-child(1),
+    .plan-table table.table-main tr th:nth-child(1) {
+      min-width: 260px !important; } }
+.plan-table table.table-main table .plan-title {
+  font-size: 18px !important; }
+.plan-table table.table-main table tr th,
+.plan-table table.table-main table tr td {
+  vertical-align: top; }
+.plan-table table.table-main table tbody tr:first-child td {
+  padding-top: 15px !important; }
+.plan-table table.table-main table tbody tr td {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: calc(100% + 8px);
+  color: var(--theme-gray-color); }
+.plan-table .btn-subscribe {
+  font-weight: 700;
+  font-size: 16px;
+  border: 2px solid var(--theme-main-color);
+  color: var(--theme-main-color);
+  transition: all .3s; }
+  .plan-table .btn-subscribe:hover {
+    background-color: var(--theme-main-color);
+    color: #fff; }
+
+/* css for membership-plan - END*/
+@media (max-width: 1200px) {
+  #venue-registration #steps .step-steps li.step-list {
+    --step-icon-size: 40px;
+    --step-vertical-distance: 10px;
+    background: #EBEBEB !important;
+    border-radius: 4px;
+    padding: 10px 15px !important; }
+    #venue-registration #steps .step-steps li.step-list.active, #venue-registration #steps .step-steps li.step-list.done {
+      background: #D3F9FF !important; }
+    #venue-registration #steps .step-steps li.step-list .step-text .title {
+      margin-bottom: 0 !important;
+      font-size: 16px !important; }
+    #venue-registration #steps .step-steps li.step-list .step-icon {
+      padding: 8px !important; }
+
+  .venue-card .venue-card-header .venue-header-icon {
+    --icon-size: 40px;
+    padding: 10px; }
+  .venue-card .venue-card-header .venue-card-header-title {
+    font-size: 20px; }
+
+  .plan-title {
+    font-size: 20px; } }
+
+/*# sourceMappingURL=style.css.map */

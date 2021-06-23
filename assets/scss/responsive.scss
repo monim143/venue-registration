@@ -1,0 +1,46 @@
+// @media (max-width:992px)
+@media (max-width:1200px) {
+    #venue-registration {
+        #steps {
+            .step-steps {
+                li.step-list {
+                    --step-icon-size: 40px;
+                    --step-vertical-distance: 10px;
+                    background: #EBEBEB !important;
+                    border-radius: 4px;
+                    padding: 10px 15px !important;
+
+                    &.active,
+                    &.done {
+                        background: #D3F9FF !important;
+                    }
+
+                    .step-text {
+                        .title {
+                            margin-bottom: 0 !important;
+                            font-size: 16px !important;
+                        }
+                    }
+
+                    .step-icon {
+                        padding: 8px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .venue-card .venue-card-header {
+        .venue-header-icon {
+            --icon-size: 40px;
+            padding: 10px;
+        }
+        .venue-card-header-title {
+            font-size: 20px;
+        }
+    }
+
+    .plan-title {
+        font-size: 20px;
+    }
+}
